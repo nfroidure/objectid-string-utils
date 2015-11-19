@@ -2,6 +2,15 @@
 
 Helpers to pars/stringify hexadecimal representation of an ObjectId (MongoDB)
 
+
+[![NPM version](https://badge.fury.io/js/object-id-string.svg)](https://npmjs.org/package/object-id-string)
+[![Build status](https://secure.travis-ci.org/nfroidure/object-id-string.svg)](https://travis-ci.org/nfroidure/object-id-string)
+[![Dependency Status](https://david-dm.org/nfroidure/object-id-string.svg)](https://david-dm.org/nfroidure/object-id-string)
+[![devDependency Status](https://david-dm.org/nfroidure/object-id-string/dev-status.svg)](https://david-dm.org/nfroidure/object-id-string#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/nfroidure/object-id-string/badge.svg?branch=master)](https://coveralls.io/r/nfroidure/object-id-string?branch=master)
+
+
+
 ## Modules
 <dl>
 <dt><a href="#module_object-id-string">object-id-string</a></dt>
