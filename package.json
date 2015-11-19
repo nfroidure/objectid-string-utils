@@ -1,0 +1,35 @@
+{
+  "name": "objectid-string-utils",
+  "version": "1.0.0",
+  "description": "ObjectId haxadecimal representation utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.mocha.js",
+    "cli": "env NPM_RUN_CLI=1",
+    "lint": "eslint index.js index.mocha.js",
+    "preversion": "npm run lint && npm test",
+    "doc": "cat index.js | jsdoc2md > API.md"
+  },
+  "keywords": [
+    "objectid",
+    "mongodb",
+    "string",
+    "hexadecimal"
+  ],
+  "author": "Nicolas Froidure",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nfroidure/objectid-string-utils.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^1.9.0",
+    "eslint-config-simplifield": "^1.1.0",
+    "istanbul": "^0.4.0",
+    "jsdoc-to-markdown": "^1.2.1",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "yerror": "^1.0.1"
+  }
+}
