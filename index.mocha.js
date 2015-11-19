@@ -1,4 +1,4 @@
-var objectIdStringUtils = require('.');
+var objectIdStringUtils = require('./index');
 var assert = require('assert');
 
 describe('object-id-string', function() {
