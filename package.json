@@ -8,7 +8,9 @@
     "cli": "env NPM_RUN_CLI=1",
     "lint": "eslint index.js index.mocha.js",
     "preversion": "npm run lint && npm test",
-    "doc": "cat index.js | jsdoc2md > API.md"
+    "doc": "cat index.js | jsdoc2md > API.md",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- index.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "cover": "istanbul cover --report html _mocha -- index.mocha.js -R spec -t 5000"
   },
   "keywords": [
     "objectid",
