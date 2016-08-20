@@ -25,11 +25,13 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^2.11.4",
     "eslint": "^1.9.0",
     "eslint-config-simplifield": "^1.1.0",
-    "istanbul": "^0.4.0",
+    "istanbul": "^0.4.1",
     "jsdoc-to-markdown": "^1.2.1",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "mocha-lcov-reporter": "^1.0.0"
   },
   "dependencies": {
     "yerror": "^1.0.1"
