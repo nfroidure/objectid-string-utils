@@ -1,11 +1,14 @@
-var objectIdStringUtils = require('./index');
-var assert = require('assert');
+/* eslint max-nested-callbacks:[0], no-magic-numbers:[0] */
+'use strict';
 
-describe('object-id-string', function() {
+const objectIdStringUtils = require('./index');
+const assert = require('assert');
 
-  describe('parse()', function() {
+describe('object-id-string', () => {
 
-    it('should work', function() {
+  describe('parse()', () => {
+
+    it('should work', () => {
       assert.deepEqual(objectIdStringUtils.parse('abbacacaabbacacaabbacaca'), {
         increment: 12241610,
         machine: 11254474,
@@ -14,28 +17,28 @@ describe('object-id-string', function() {
       });
     });
 
-    describe('should fail', function() {
+    describe('should fail', () => {
 
-      it('with non hexa string', function() {
-        assert.throws(function() {
+      it('with non hexa string', () => {
+        assert.throws(() => {
           objectIdStringUtils.parse('abbacacaabbacocoabbacaca');
         }, 'E_BAD_OBJECT_ID');
       });
 
-      it('with not enough chars', function() {
-        assert.throws(function() {
+      it('with not enough chars', () => {
+        assert.throws(() => {
           objectIdStringUtils.parse('abbacacaabbacacaabbacac');
         }, 'E_BAD_OBJECT_ID');
       });
 
-      it('with too much chars', function() {
-        assert.throws(function() {
+      it('with too much chars', () => {
+        assert.throws(() => {
           objectIdStringUtils.parse('abbacacaabbacacaabbacacaa');
         }, 'E_BAD_OBJECT_ID');
       });
 
-      it('with non string argument', function() {
-        assert.throws(function() {
+      it('with non string argument', () => {
+        assert.throws(() => {
           objectIdStringUtils.parse(0xabbacacaabbacacaabbacaca);
         }, 'E_BAD_OBJECT_ID');
       });
@@ -44,9 +47,9 @@ describe('object-id-string', function() {
 
   });
 
-  describe('stringify()', function() {
+  describe('stringify()', () => {
 
-    it('should work', function() {
+    it('should work', () => {
       assert.equal(objectIdStringUtils.stringify({
         increment: 12241610,
         machine: 11254474,
@@ -55,7 +58,7 @@ describe('object-id-string', function() {
       }), 'abbacacaabbacacaabbacaca');
     });
 
-    it('should work when necessinting padding', function() {
+    it('should work when necessinting padding', () => {
       assert.equal(objectIdStringUtils.stringify({
         increment: 0,
         machine: 0,
@@ -64,8 +67,8 @@ describe('object-id-string', function() {
       }), '000000000000000000000000');
     });
 
-    it('should fail', function() {
-      assert.throws(function() {
+    it('should fail', () => {
+      assert.throws(() => {
         assert.equal(objectIdStringUtils.stringify({
           increment: 12241610000000000000000,
           machine: 11254474,
