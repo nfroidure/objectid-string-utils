@@ -39,18 +39,20 @@ function objectIdStringUtilsParse(id) {
  * @return {String}       The ObjectId string representation
  */
 function objectIdStringUtilsStringify(parts) {
-  return _check(PARTS_NAMES.map((partName, index) => {
-    let str = parts[partName].toString(16);
+  return _check(
+    PARTS_NAMES.map((partName, index) => {
+      let str = parts[partName].toString(16);
 
-    while(!str[PARTS_LENGTHS[index] - 1]) {
-      str = 0 + str;
-    }
-    return str;
-  }).join(''));
+      while (!str[PARTS_LENGTHS[index] - 1]) {
+        str = 0 + str;
+      }
+      return str;
+    }).join('')
+  );
 }
 
 function _check(id) {
-  if('string' !== typeof id || 24 !== id.length || !_isHexaString(id)) {
+  if ('string' !== typeof id || 24 !== id.length || !_isHexaString(id)) {
     throw new YError('E_BAD_OBJECT_ID', id, id.length);
   }
   return id;
